@@ -1,0 +1,27 @@
+Package: exposuretemplate
+Type: Package
+Title: TEMPLATE for ZCTA/County-Level Exposure Packages
+Version: 0.1.0
+Authors@R: c(
+    person("Your", "Name", email = "you@uchicago.edu", role = c("aut", "cre")))
+Description: TEMPLATE. Replace {exposure} throughout with your exposure name.
+    Provides functions to fetch, summarize, and map ZCTA- and county-level
+    exposure data. Processed data is hosted on Zenodo; get_data() downloads
+    and caches only the requested slice.
+Encoding: UTF-8
+URL: https://github.com/UChicago-ExtremeWeather/exposuretemplate
+BugReports: https://github.com/UChicago-ExtremeWeather/exposuretemplate/issues
+Imports:
+  arrow,
+  ggplot2,
+  sf (>= 1.0-15),
+  dplyr (>= 1.1.0),
+  tigris,
+  scico,
+  purrr,
+  tools,
+  utils
+Depends:
+    R (>= 3.5)
+License: GPL (>= 2)
+RoxygenNote: 7.3.3

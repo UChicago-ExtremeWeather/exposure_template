@@ -1,0 +1,18 @@
+# Fill in once both DOIs exist (Steps 4 and 6). Cite BOTH records.
+citHeader("To cite {exposure}exposure, cite both the code package and the data record:")
+
+bibentry(
+  bibtype = "Manual",
+  title   = "{exposure}exposure: <one-line description>",
+  author  = c(person("Your", "Name")),
+  year    = "YEAR",
+  note    = "R package, DOI: CODE_DOI"
+)
+
+bibentry(
+  bibtype = "Misc",
+  title   = "{exposure}exposuredata",
+  author  = c(person("Your", "Name")),
+  year    = "YEAR",
+  note    = "Data record, DOI: DATA_DOI"
+)
