@@ -1,7 +1,9 @@
 # =============================================================================
 # DATA ACCESS: Zenodo + arrow + local cache  (DEFAULT pattern, data >~1GB)
 # Replace {exposure} throughout. Set URLs to your Zenodo data record (Step 4).
-# Parquet must be sorted by year, then geography, before upload.
+# Parquet must be sorted by year, then geography, before upload. In this example,
+# I assume you are processing at two spatial levels: zcta and county. Discuss with
+# Kate if you're not sure what spatial scale you need to use. 
 # =============================================================================
 
 .zenodo_urls <- function() {
