@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+scratch/
+
+# never commit downloaded/cached data
+data/
+inst/extdata/
+*.parquet
