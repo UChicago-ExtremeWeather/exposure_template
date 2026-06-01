@@ -65,11 +65,6 @@ get_data(geography = "zcta", geo_list = c(606), year_range = 2010:2015)
 
 <!-- Repeat a subsection per feature / per function as needed. -->
 
-## Updating the package data
-
-<FILL IN: how to refresh from the upstream source and re-publish a Zenodo
-version + new GitHub release.>
-
 ## Citation
 
 See `citation("{exposure}exposure")`. Cite **both** the code package and the
