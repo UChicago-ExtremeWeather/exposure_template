@@ -50,4 +50,6 @@ to fetch from.
       (lab Zenodo account settings). Cut a Release (`v0.1.0`) → Zenodo mints the
       code DOI. Put **both** DOIs in README and `inst/CITATION`.
 - [ ] **7. Fill in the README** sections and embed example plots from `figures/`.
-- [ ] **8. DELETE THIS FILE**, commit, and you're done.
+- [ ] **8. Provide info on how to update** Add info on how to update your package with additional data in
+      [updating_packages.md](https://github.com/UChicago-ExtremeWeather/team_docs/blob/main/updating_packages.md)
+- [ ] **9. DELETE THIS FILE**, commit, and you're done.
