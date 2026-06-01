@@ -1,15 +1,14 @@
 # About the `{exposure}exposure` package
-
+The README file provides basic informatino to the user. Here, we want to include one intro
+paragraph on: what this package does, what data it draws on (source + provider), the geographies 
+we process to (e.g. ZCTA / county / tract) and the geography of the original data (e.g. 1km grids), 
+and the lastly year range.
+     
 <!-- This is the TEMPLATE README. 
      Replace every {exposure} and <FILL IN> placeholder with the appropriate info/exposure name.
      Delete these HTML comments before publishing. 
      I recommend doing this after you've finished your package and are ready to publish. 
      As you're working, follow the checklist file in this repo.-->
-
-<!-- In here, we want to have one short paragraph: what this package does, what data it draws on
-     (source + provider), the geographies we process to (ZCTA / county / tract) and the geographies
-     the original data is in (e.g. 1km grids), and the lastly year range. -->
-<FILL IN>
 
 # How to use the `{exposure}exposure` package
 
