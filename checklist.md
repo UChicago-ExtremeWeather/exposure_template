@@ -1,8 +1,8 @@
-# STUDENT CHECKLIST — DELETE THIS FILE BEFORE PUBLISHING / RELEASING
+# Programmer checklist — DELETE THIS FILE BEFORE PUBLISHING / RELEASING
 
 > ⚠️ This file is a working to-do list for building your package. **Delete it
-> before you cut your first GitHub Release.** (It is in `.Rbuildignore` so it
-> won't ship in the installed package, but remove it from the repo too.)
+> before you cut your first GitHub Release.** (It's in `.Rbuildignore` so it
+> won't ship in the installed package, but best to remove from the repo too.)
 
 ## What's in this repo
 
@@ -26,13 +26,15 @@ After you write/edit functions, run `devtools::document()` to regenerate
 Do these in order. The data record comes **first** so the package knows where
 to fetch from.
 
-- [ ] **1. Get your repo from Kate.** Only org owners create repos; Kate copies
-      `exposure_template` and gives you Write access. Replace every `{exposure}`
-      placeholder across the repo with your exposure name.
-- [ ] **2. Estimate size, decide layout.** Process one year at both spatial
-      levels, write compressed Parquet, measure, project full size. >~1GB → use
-      this Zenodo-fetch template as-is. Default layout: one ZCTA file, one county
-      file. Split further only if size forces it.
+- [ ] **1. Get your repo from Kate.** Only org owners create repos so Kate will copy this
+      repo, `exposure_template` and gives you Write access. Presumably you've done
+      this already. Replace every `{exposure}` placeholder across the repo with your 
+      exposure name.
+- [ ] **2. Estimate size, decide layout.** If you're not sure on the size, 
+      process one year at the desired spatial levels, write compressed Parquet, 
+      measure, project full size. If >~1GB → use this Zenodo-fetch template as-is. 
+      If the data is smaller, you can probably get away with just using one repo and
+      storing the processed data directly on GitHub. 
 - [ ] **3. Process the data.** Write `data-raw/process_data.R`; produce the
       Parquet files. **Sort by year, then geography** before writing.
 - [ ] **4. Create the Zenodo data record.** Log into the **shared lab Zenodo
