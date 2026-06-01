@@ -26,30 +26,55 @@ After you write/edit functions, run `devtools::document()` to regenerate
 Do these in order. The data record comes **first** so the package knows where
 to fetch from.
 
-- [ ] **1. Get your repo from Kate.** Only org owners create repos so Kate will copy this
-      repo, `exposure_template` and gives you Write access. Presumably you've done
-      this already. Replace every `{exposure}` placeholder across the repo with your 
-      exposure name.
-- [ ] **2. Estimate size, decide layout.** If you're not sure on the size, 
-      process one year at the desired spatial levels, write compressed Parquet, 
-      measure, project full size. If >~1GB → use this Zenodo-fetch template as-is. 
-      If the data is smaller, you can probably get away with just using one repo and
-      storing the processed data directly on GitHub. 
-- [ ] **3. Process the data.** Write `data-raw/process_data.R`; produce the
-      Parquet files. **Sort by year, then geography** before writing.
-- [ ] **4. Create the Zenodo data record.** Log into the **shared lab Zenodo
-      account** (not personal). New upload → add the Parquet files (+ NetCDF if
-      gridded) → metadata: title `{exposure}exposuredata`, authors, GPL-2.0+,
-      associate with the lab Community → publish (or reserve DOI). Note the DOI
-      and file download URLs.
-- [ ] **5. Wire up access functions.** Put the resolved Zenodo URLs in
-      `.zenodo_urls()` in `R/data_access.R`. Add your summary/mapping functions.
-      Confirm the round trip: fresh install in a clean R session, run
-      `get_data()` for a small slice; it should download, cache, and return.
-- [ ] **6. Release + DOIs.** Switch on Zenodo's GitHub integration for the repo
-      (lab Zenodo account settings). Cut a Release (`v0.1.0`) → Zenodo mints the
-      code DOI. Put **both** DOIs in README and `inst/CITATION`.
-- [ ] **7. Fill in the README** sections and embed example plots from `figures/`.
-- [ ] **8. Provide info on how to update** Add info on how to update your package with additional data in
-      [updating_packages.md](https://github.com/UChicago-ExtremeWeather/team_docs/blob/main/updating_packages.md)
-- [ ] **9. DELETE THIS FILE**, commit, and you're done.
+- [ ] **1. Get your repo.** Only org owners create repos. The `exposure_template`
+      repo will be copied for you with Write access. Replace every `{exposure}`
+      placeholder across the repo with your exposure name.
+
+- [ ] **2. Estimate size, decide layout.** If unsure on size, process one year
+      at the desired spatial levels, write compressed Parquet, measure, project
+      full size. If >~1GB, use the Zenodo-fetch pattern (this template). If
+      smaller, the processed data can stay on GitHub. Default layout: one file
+      per spatial level.
+
+- [ ] **3. Process the data.** Write `data-raw/process_data.R` to turn raw
+      source data into Parquet files. Sort by year, then geography, before
+      writing.
+
+- [ ] **4. Upload the data to Zenodo.** Log into the shared lab Zenodo account
+      (not personal) and create a new update. Add the Parquet files (plus NetCDF
+      if gridded). Fill in metadata: title `{exposure}exposuredata`, authors,
+      GPL-2.0+, associate with the lab Community. Publish (or reserve the DOI
+      if you want it before finishing the package). Note the DOI and file
+      download URLs.
+
+- [ ] **5. Connect `get_data()` to Zenodo.** Paste the file download URLs from
+      Step 4 into `.zenodo_urls()` in `R/data_access.R`. Test it: install the
+      package in a clean R session and run `get_data()` for a small slice. It
+      should download from Zenodo, cache locally, and return the data.
+
+- [ ] **6. Build out the rest of the package.** Write your summary and mapping
+    functions in `R/`. Document each with roxygen comments and `@export`,
+    then run `devtools::document()` to regenerate `man/` and `NAMESPACE`.
+    - [ ] If you have any questions about building an R package, take a look
+        at [this tutorial](https://tinyheero.github.io/jekyll/update/2015/07/26/making-your-first-R-package.html).
+    - [ ] If you have any questions about what types of functions you should
+        include, discuss with Kate.
+
+- [ ] **7. Fill in the README** sections and embed example plots from
+      `figures/`.
+
+- [ ] **8. Publish a release on GitHub, then upload it to Zenodo.** On the
+      GitHub repo page: Releases → Draft a new release → tag `v0.1.0` →
+      Publish release. GitHub generates a zip file, which you should download.
+    - [ ]  Log into the shared lab Zenodo account, create a new upload, drag the zip
+      in. Metadata: title `{exposure}exposure`, authors, GPL-2.0+, lab
+      Community. Under "Related identifiers," link to the data DOI from
+      Step 4 (relation: "is supplement to").  **Make sure the original
+      data source is credited.** Then go ahead and publish the record. 
+    - [ ] Once your done, put your two DOIs in the README and `inst/CITATION`.
+          **Remember to also include the citation for the original data in there.**          
+
+- [ ] **9. Document how to update.** Provide info for the team on how to update your package
+      in [updating_packages.md](https://github.com/UChicago-ExtremeWeather/team_docs/blob/main/updating_packages.md).
+
+- [ ] **10. Delete this file**, commit, and you're done.
