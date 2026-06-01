@@ -1,11 +1,15 @@
 # About the `{exposure}exposure` package
 
-<!-- TEMPLATE README. Replace every {exposure} and <FILL IN> placeholder.
-     Delete these HTML comments before publishing. -->
+<!-- This is the TEMPLATE README. 
+     Replace every {exposure} and <FILL IN> placeholder with the appropriate info/exposure name.
+     Delete these HTML comments before publishing. 
+     I recommend doing this after you've finished your package and are ready to publish. 
+     As you're working, follow the checklist file in this repo.-->
 
-<!-- One short paragraph: what this package does, what data it draws on
-     (source + provider), the geographies (ZCTA / county) and the year range. -->
-<FILL IN: overview paragraph>
+<!-- In here, we want to have one short paragraph: what this package does, what data it draws on
+     (source + provider), the geographies we process to (ZCTA / county / tract) and the geographies
+     the original data is in (e.g. 1km grids), and the lastly year range. -->
+<FILL IN>
 
 # How to use the `{exposure}exposure` package
 
@@ -19,7 +23,8 @@ library({exposure}exposure)
 ```
 
 <!-- Note on first-use download: the data is fetched from Zenodo and cached
-     locally on the first get_data() call. Keep or adapt the sentence below. -->
+     locally on the first get_data() call. Keep or adapt the sentence below, 
+     assuming this is still true for your pacakge. -->
 The first call to `get_data()` downloads the processed data from Zenodo and
 caches it locally; later calls read from the cache.
 
